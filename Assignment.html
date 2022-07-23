@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Assignment5
+        </title>
+    </head>
+    <body>
+        <script>
+            const people = [
+                {
+                    id: 1,
+                    name: "Mehemt" ,
+                    age: 25,
+                    designation :"Developer",
+                    salary : 10000,
+                    phone: 1
+                },
+                {
+                    id: 2,
+                    name: "Ulaş" ,
+                    age: 33,
+                    designation :"Accountant",
+                    salary : 3500,
+                    phone: 1
+                },
+                {
+                    id: 3,
+                    name: "Samed" ,
+                    age: 56,
+                    designation :"Developer",
+                    salary : 15000,
+                    phone: 1
+                },
+                {
+                    id: 4,
+                    name: "Yiğit" ,
+                    age: 27,
+                    designation :"Accountant",
+                    salary : 2500,
+                    phone: 1
+                },
+                {
+                    id: 5,
+                    name: "Berkay" ,
+                    age: 38,
+                    designation :"Worker",
+                    salary : 4000,
+                    phone: 1
+                },
+                {
+                    id: 44,
+                    name: "Can Baba" ,
+                    age: 1,
+                    designation :"Gardener",
+                    salary : 4500,
+                    phone: 1
+                }
+            ];
+             
+            //All developers
+            let Developers = people.filter((element) => // İf we provide curly  brakects it is automatically void unless we provide return manually
+                element.designation == "Developer"
+            );
+            Developers.forEach((el) =>
+            {
+                console.log(el.name, el.designation);
+            });
+
+            //Under age 30
+            let yp = people.filter((el) => el.age < 30);
+
+            yp.forEach((el) => console.log(el.name, el.age));
+
+            //Under age 30 above sallary 7000
+            let ypR = people.filter((el) => el.age < 30 && el.salary > 7000);
+            
+            ypR.forEach((el) => {console.log(el.name, el.salary)});
+
+            //All Accountants
+            let ac = people.filter((el) => el.designation == "Accountant");
+
+            ac.forEach((el) => {console.log(el.name, el.designation)});
+
+            //All Accountants sallary below 4000
+            let acP = people.filter((el) => el.designation == "Accountant" && el.salary < 4000);
+
+            acP.forEach((el) => {console.log(el.name, el.designation, el.salary)});
+
+            //Employee ID is 5
+
+            people.forEach((el) => {if(el.id == 5){console.log(el.name, el.id)}});
+        </script>
+    </body>
+</html>
